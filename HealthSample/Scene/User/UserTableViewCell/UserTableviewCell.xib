@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableviewCell" id="5j1-mU-Du8" customClass="UserTableviewCell" customModule="HealthSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5j1-mU-Du8" id="GVa-mp-5TW">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1i5-x3-FLE">
+                        <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVF-Gg-vTM">
+                        <rect key="frame" x="0.0" y="43" width="414" height="1"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="hvs-2s-4Jl"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt3-Wb-ENl">
+                        <rect key="frame" x="352" y="11.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Mt3-Wb-ENl" firstAttribute="centerY" secondItem="GVa-mp-5TW" secondAttribute="centerY" id="9bR-42-i2n"/>
+                    <constraint firstItem="1i5-x3-FLE" firstAttribute="leading" secondItem="GVa-mp-5TW" secondAttribute="leading" constant="20" symbolic="YES" id="Kym-Bt-6aZ"/>
+                    <constraint firstAttribute="bottom" secondItem="TVF-Gg-vTM" secondAttribute="bottom" id="UTQ-PI-OX8"/>
+                    <constraint firstItem="1i5-x3-FLE" firstAttribute="centerY" secondItem="GVa-mp-5TW" secondAttribute="centerY" id="WdF-It-BUx"/>
+                    <constraint firstAttribute="trailing" secondItem="Mt3-Wb-ENl" secondAttribute="trailing" constant="20" symbolic="YES" id="ZED-zd-pgb"/>
+                    <constraint firstItem="TVF-Gg-vTM" firstAttribute="leading" secondItem="GVa-mp-5TW" secondAttribute="leading" id="b4C-UH-2jU"/>
+                    <constraint firstAttribute="trailing" secondItem="TVF-Gg-vTM" secondAttribute="trailing" id="xx3-AR-9j4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="birthdayLabel" destination="Mt3-Wb-ENl" id="bGJ-08-UXw"/>
+                <outlet property="titleLabel" destination="1i5-x3-FLE" id="V25-D7-evc"/>
+            </connections>
+            <point key="canvasLocation" x="-43" y="82"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

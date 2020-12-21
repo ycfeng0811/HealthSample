@@ -6,17 +6,28 @@
 //
 
 import UIKit
+import URLNavigator
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var navigator: NavigatorType?
+    var tabbarIndex: Int = 0
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        //初始化URLNavigator和設定初始畫面
+        let navigator = Navigator()
+        NavigatorMap.initialize(navigator: navigator)
+        window.makeKeyAndVisible()
+        window.backgroundColor = .white
+        let tabbarString = "myapp://tabbarview/\(self.tabbarIndex)"
+        window.rootViewController = navigator.viewController(for: tabbarString )
+        self.window = window
+        self.navigator = navigator
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
