@@ -9,8 +9,8 @@
 class User {
     var name: String
     var birthday: String
-    var id: Int?
-    init(id: Int? = nil, name: String, birthday: String) {
+    var id: Int
+    init(id: Int, name: String, birthday: String) {
         self.id = id
         self.name =  name
         self.birthday = birthday

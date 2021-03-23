@@ -34,6 +34,12 @@
 		644388D0258C699E00B3B374 /* UserTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644388CF258C699E00B3B374 /* UserTableviewCell.xib */; };
 		644388D5258F6F7E00B3B374 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644388D4258F6F7E00B3B374 /* UserManager.swift */; };
 		644388DB258F717900B3B374 /* CustomErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644388DA258F717900B3B374 /* CustomErrorService.swift */; };
+		644388E4259085DA00B3B374 /* AddStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644388E3259085DA00B3B374 /* AddStepVC.swift */; };
+		644388E9259085ED00B3B374 /* AddStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644388E8259085ED00B3B374 /* AddStepView.xib */; };
+		644388EE259085FB00B3B374 /* AddStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644388ED259085FB00B3B374 /* AddStepVM.swift */; };
+		644388FB2591743600B3B374 /* StepRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644388FA2591743600B3B374 /* StepRecordTableViewCell.xib */; };
+		644389002591744300B3B374 /* StepRecordTableViewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644388FF2591744300B3B374 /* StepRecordTableViewCellVC.swift */; };
+		6443890525917B3900B3B374 /* StepRecordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6443890425917B3900B3B374 /* StepRecordVM.swift */; };
 		790F40C83935BA7EEF35C55E /* Pods_HealthSample_HealthSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370E948C82828D43E7331475 /* Pods_HealthSample_HealthSampleUITests.framework */; };
 		817A133F9D2E7ABD5850FEDB /* Pods_HealthSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045733A4009BE05B497B3FA0 /* Pods_HealthSampleTests.framework */; };
 		A492991AAA3C789BCEB8479A /* Pods_HealthSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3CD3F44540B6D017C9760C /* Pods_HealthSample.framework */; };
@@ -95,6 +101,12 @@
 		644388CF258C699E00B3B374 /* UserTableviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableviewCell.xib; sourceTree = "<group>"; };
 		644388D4258F6F7E00B3B374 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		644388DA258F717900B3B374 /* CustomErrorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorService.swift; sourceTree = "<group>"; };
+		644388E3259085DA00B3B374 /* AddStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepVC.swift; sourceTree = "<group>"; };
+		644388E8259085ED00B3B374 /* AddStepView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStepView.xib; sourceTree = "<group>"; };
+		644388ED259085FB00B3B374 /* AddStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepVM.swift; sourceTree = "<group>"; };
+		644388FA2591743600B3B374 /* StepRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepRecordTableViewCell.xib; sourceTree = "<group>"; };
+		644388FF2591744300B3B374 /* StepRecordTableViewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepRecordTableViewCellVC.swift; sourceTree = "<group>"; };
+		6443890425917B3900B3B374 /* StepRecordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepRecordVM.swift; sourceTree = "<group>"; };
 		8BF70182C50F56E6D1405265 /* Pods-HealthSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSample.debug.xcconfig"; path = "Target Support Files/Pods-HealthSample/Pods-HealthSample.debug.xcconfig"; sourceTree = "<group>"; };
 		8D27A068032B7AEC7CB04E4A /* Pods-HealthSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSampleTests.release.xcconfig"; path = "Target Support Files/Pods-HealthSampleTests/Pods-HealthSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		D8A1F6E250A64435EEA616CC /* Pods-HealthSample-HealthSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSample-HealthSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-HealthSample-HealthSampleUITests/Pods-HealthSample-HealthSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				64438872258B428E00B3B374 /* TabBar */,
-				644387EF2589F55400B3B374 /* StepRecord */,
+				644387EF2589F55400B3B374 /* StepRecordChart */,
 				644387ED2589DD6200B3B374 /* User */,
 			);
 			path = Scene;
@@ -219,11 +231,12 @@
 		644387ED2589DD6200B3B374 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				644388B7258C5E9D00B3B374 /* UserTableViewCell */,
-				64438871258B420800B3B374 /* AddUserView */,
 				6443883B258AED1B00B3B374 /* UserView.xib */,
 				644387FD2589F7A600B3B374 /* UserVC.swift */,
 				64438860258B023400B3B374 /* UserVM.swift */,
+				64438871258B420800B3B374 /* AddUserView */,
+				644388F22590862B00B3B374 /* StepRecord */,
+				644388B7258C5E9D00B3B374 /* UserTableViewCell */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -238,13 +251,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		644387EF2589F55400B3B374 /* StepRecord */ = {
+		644387EF2589F55400B3B374 /* StepRecordChart */ = {
 			isa = PBXGroup;
 			children = (
-				644387F32589F5A000B3B374 /* StepRecordView.xib */,
-				64438833258AEBB800B3B374 /* StepRecordVC.swift */,
 			);
-			path = StepRecord;
+			path = StepRecordChart;
 			sourceTree = "<group>";
 		};
 		6443882A258AEAA100B3B374 /* Navigator */ = {
@@ -299,6 +310,37 @@
 			children = (
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		644388DF2590853E00B3B374 /* AddStepView */ = {
+			isa = PBXGroup;
+			children = (
+				644388E3259085DA00B3B374 /* AddStepVC.swift */,
+				644388E8259085ED00B3B374 /* AddStepView.xib */,
+				644388ED259085FB00B3B374 /* AddStepVM.swift */,
+			);
+			path = AddStepView;
+			sourceTree = "<group>";
+		};
+		644388F22590862B00B3B374 /* StepRecord */ = {
+			isa = PBXGroup;
+			children = (
+				644387F32589F5A000B3B374 /* StepRecordView.xib */,
+				64438833258AEBB800B3B374 /* StepRecordVC.swift */,
+				6443890425917B3900B3B374 /* StepRecordVM.swift */,
+				644388F625908CA300B3B374 /* StepRecordTableViewCell */,
+				644388DF2590853E00B3B374 /* AddStepView */,
+			);
+			path = StepRecord;
+			sourceTree = "<group>";
+		};
+		644388F625908CA300B3B374 /* StepRecordTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				644388FA2591743600B3B374 /* StepRecordTableViewCell.xib */,
+				644388FF2591744300B3B374 /* StepRecordTableViewCellVC.swift */,
+			);
+			path = StepRecordTableViewCell;
 			sourceTree = "<group>";
 		};
 		F751C604FB10F138C49518AE /* Pods */ = {
@@ -428,10 +470,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644388E9259085ED00B3B374 /* AddStepView.xib in Resources */,
 				6443884A258AF09500B3B374 /* TabBarView.xib in Resources */,
 				644387892587756200B3B374 /* LaunchScreen.storyboard in Resources */,
 				644388D0258C699E00B3B374 /* UserTableviewCell.xib in Resources */,
 				644387F42589F5A000B3B374 /* StepRecordView.xib in Resources */,
+				644388FB2591743600B3B374 /* StepRecordTableViewCell.xib in Resources */,
 				644387862587756200B3B374 /* Assets.xcassets in Resources */,
 				6443883C258AED1B00B3B374 /* UserView.xib in Resources */,
 				64438874258B458100B3B374 /* AddUserView.xib in Resources */,
@@ -563,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				644387812587755F00B3B374 /* TabBarVC.swift in Sources */,
+				644389002591744300B3B374 /* StepRecordTableViewCellVC.swift in Sources */,
 				644388B3258C414300B3B374 /* AddUserVM.swift in Sources */,
 				64438861258B023400B3B374 /* UserVM.swift in Sources */,
 				644387FE2589F7A600B3B374 /* UserVC.swift in Sources */,
@@ -570,11 +615,14 @@
 				644388162589FC2C00B3B374 /* User.swift in Sources */,
 				644388D5258F6F7E00B3B374 /* UserManager.swift in Sources */,
 				6443886A258B269300B3B374 /* ModelViewViewModel.swift in Sources */,
+				644388EE259085FB00B3B374 /* AddStepVM.swift in Sources */,
 				644388DB258F717900B3B374 /* CustomErrorService.swift in Sources */,
 				644387B72587763400B3B374 /* SQLiteConnect.swift in Sources */,
+				644388E4259085DA00B3B374 /* AddStepVC.swift in Sources */,
 				64438879258B459000B3B374 /* AddUserVC.swift in Sources */,
 				644388BE258C5EED00B3B374 /* UserTableViewCellVC.swift in Sources */,
 				6443881B2589FC4700B3B374 /* StepRecord.swift in Sources */,
+				6443890525917B3900B3B374 /* StepRecordVM.swift in Sources */,
 				6443882C258AEAB400B3B374 /* NavigatorMap.swift in Sources */,
 				644388AB258B4C5600B3B374 /* ExtensionUIView.swift in Sources */,
 				6443877D2587755F00B3B374 /* AppDelegate.swift in Sources */,

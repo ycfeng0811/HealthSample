@@ -12,8 +12,11 @@ class UserTableviewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var stepRecordButton: UIButton!
+    @IBOutlet weak var checkImage: UIImageView!
+    var user: User?
     
-    var disposeBag = DisposeBag()
+    var bag = DisposeBag()
 
     override func prepareForReuse() {
       super.prepareForReuse()
@@ -22,6 +25,7 @@ class UserTableviewCell: UITableViewCell {
 
     override func awakeFromNib() {
       super.awakeFromNib()
-      
+        
     }
+    
 }

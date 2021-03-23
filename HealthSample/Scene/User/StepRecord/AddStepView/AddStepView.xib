@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddStepVC" customModule="HealthSample" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="M2H-hS-nsM" id="zaA-RP-wr3"/>
+                <outlet property="cancelButton" destination="SX5-iE-ZHL" id="UpY-Em-iKG"/>
+                <outlet property="countTextField" destination="Uga-Oa-BSc" id="2ip-KX-zfM"/>
+                <outlet property="dateTextField" destination="aOY-xK-RKd" id="qTI-CW-nUO"/>
+                <outlet property="view" destination="ST6-Yi-GQ6" id="j0b-Pw-oHq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ST6-Yi-GQ6">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yD6-JQ-K8W">
+                    <rect key="frame" x="57" y="317.5" width="300" height="261.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新增步數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-td-esQ">
+                            <rect key="frame" x="115.5" y="30" width="69.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-5L-wth">
+                            <rect key="frame" x="50" y="131" width="200" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="步數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0u-1J-ZAY">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="65M-qt-J5Q"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入生日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uga-Oa-BSc">
+                                    <rect key="frame" x="50" y="0.0" width="150" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="fdH-Cp-Mb2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kne-v5-MCt">
+                            <rect key="frame" x="50" y="181.5" width="200" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX5-iE-ZHL">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                                    <state key="normal" title="取消"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2H-hS-nsM">
+                                    <rect key="frame" x="110" y="0.0" width="90" height="30"/>
+                                    <color key="backgroundColor" systemColor="linkColor"/>
+                                    <state key="normal" title="新增">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-OL-apN">
+                            <rect key="frame" x="50" y="80.5" width="200" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-61-Phe">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="Tm2-1O-6fd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aOY-xK-RKd">
+                                    <rect key="frame" x="50" y="0.0" width="150" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="tlR-DG-xjo"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="E2W-OL-apN" secondAttribute="trailing" constant="50" id="5JN-Mz-Xmh"/>
+                        <constraint firstItem="E2W-OL-apN" firstAttribute="bottom" secondItem="2fd-5L-wth" secondAttribute="top" constant="-30" id="KLx-aI-phK"/>
+                        <constraint firstItem="kne-v5-MCt" firstAttribute="width" secondItem="2fd-5L-wth" secondAttribute="width" id="Luf-9G-WrG"/>
+                        <constraint firstItem="kne-v5-MCt" firstAttribute="centerX" secondItem="yD6-JQ-K8W" secondAttribute="centerX" id="PZu-J6-fJi"/>
+                        <constraint firstItem="E2W-OL-apN" firstAttribute="top" secondItem="ckj-td-esQ" secondAttribute="bottom" constant="30" id="VGS-0o-MLN"/>
+                        <constraint firstItem="kne-v5-MCt" firstAttribute="top" secondItem="2fd-5L-wth" secondAttribute="bottom" constant="30" id="cJN-US-Af6"/>
+                        <constraint firstItem="ckj-td-esQ" firstAttribute="top" secondItem="yD6-JQ-K8W" secondAttribute="top" constant="30" id="cfZ-00-pcW"/>
+                        <constraint firstItem="E2W-OL-apN" firstAttribute="leading" secondItem="yD6-JQ-K8W" secondAttribute="leading" constant="50" id="guZ-V8-dpb"/>
+                        <constraint firstItem="2fd-5L-wth" firstAttribute="centerX" secondItem="yD6-JQ-K8W" secondAttribute="centerX" id="iqO-Jj-wfi"/>
+                        <constraint firstAttribute="bottom" secondItem="kne-v5-MCt" secondAttribute="bottom" constant="50" id="jRr-Vn-JZ7"/>
+                        <constraint firstItem="ckj-td-esQ" firstAttribute="centerX" secondItem="yD6-JQ-K8W" secondAttribute="centerX" id="rOZ-sX-TI2"/>
+                        <constraint firstItem="E2W-OL-apN" firstAttribute="centerX" secondItem="yD6-JQ-K8W" secondAttribute="centerX" id="xDk-Vb-fPb"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="GgT-Dq-oJx"/>
+            <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+            <constraints>
+                <constraint firstItem="yD6-JQ-K8W" firstAttribute="centerX" secondItem="ST6-Yi-GQ6" secondAttribute="centerX" id="tdm-zB-qhV"/>
+                <constraint firstItem="yD6-JQ-K8W" firstAttribute="centerY" secondItem="ST6-Yi-GQ6" secondAttribute="centerY" id="xrH-b9-N5x"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-236.23188405797103" y="-117.85714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

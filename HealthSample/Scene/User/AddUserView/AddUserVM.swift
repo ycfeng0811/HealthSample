@@ -14,7 +14,8 @@ class AddUserVM: ModelViewViewModel {
     let bag = DisposeBag()
     var isEmpty: PublishRelay<Bool> = PublishRelay<Bool>.init()
     var isDismiss: BehaviorRelay<Bool> = BehaviorRelay<Bool>.init(value: false)
-    var user: User?
+    var name: String?
+    var birthday: String?
     
     struct Input {
         var name: ControlProperty<String?>
@@ -36,18 +37,21 @@ class AddUserVM: ModelViewViewModel {
                     return
                 }
                 if _name != "" && _birthday != "" {
-                    self.user = User(name: _name, birthday: _birthday)
+                    self.name = _name
+                    self.birthday = _birthday
                 }
               
             }.disposed(by: bag)
 
         input.addUser
             .subscribe { _ in
-                guard let _user = self.user else {
+                guard let _name = self.name,
+                      let _birthday = self.birthday else {
                     self.isEmpty.accept(true)
                     return
                 }
-                DBService.UserTable.insert(user: _user)
+                DBService.UserTable.insert(name: _name,
+                                           birthday: _birthday)
                 self.isDismiss.accept(true)
             }.disposed(by: bag)
 

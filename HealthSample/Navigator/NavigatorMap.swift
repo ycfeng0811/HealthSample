@@ -11,6 +11,7 @@ import RxCocoa
 
 struct MyContext {
     var data: BehaviorRelay<Bool>
+    var user: User?
 }
 
 class NavigatorMap {
@@ -40,8 +41,11 @@ class NavigatorMap {
       return nvc
     }
 
-    navigator.register("myapp://steprecord") { (url, values, _) -> UIViewController? in
-      let vc = StepRecordVC(navigator: navigator)
+    navigator.register("myapp://steprecord") { (url, values, context) -> UIViewController? in
+        guard let user = context as? User else {
+            return nil
+        }
+        let vc = StepRecordVC(navigator: navigator, user: user)
       return vc
     }
 
@@ -50,6 +54,20 @@ class NavigatorMap {
             return nil
         }
         let vc = AddUserVC(navigator: navigator, completionHandler: _context)
+        vc.modalPresentationStyle = UIModalPresentationStyle.custom
+        vc.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        
+      return vc
+    }
+    
+    navigator.register("myapp://addstepcounting") { (url, values, context) -> UIViewController? in
+        guard let _context = context as? MyContext,
+              let user = _context.user else {
+            return nil
+        }
+        let vc = AddStepVC(navigator: navigator,
+                           completionHandler: _context,
+                           user: user)
         vc.modalPresentationStyle = UIModalPresentationStyle.custom
         vc.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         

@@ -9,6 +9,6 @@ import Foundation
 
 class UserManager {
     
-
+    static var user: User?
     
 }

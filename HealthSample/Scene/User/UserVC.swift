@@ -18,8 +18,9 @@ class UserVC: UIViewController {
     let viewModel: UserVM
     var bag = DisposeBag()
     var updateUser = BehaviorRelay<Bool>.init(value: true)
+    var selectedUser: User?
  
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     init(navigator: NavigatorType) {
       self.navigator = navigator
         viewModel = UserVM.init()
@@ -33,14 +34,16 @@ class UserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "使用者列表"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addUser))
         
         let nib = UINib(nibName: "UserTableviewCell", bundle: nil)
-        tableview.register(nib, forCellReuseIdentifier: "UserTableviewCell")
+        tableView.register(nib, forCellReuseIdentifier: "UserTableviewCell")
         
         let output = viewModel.transform(input: UserVM.Input.init(updateUsers: updateUser))
         viewModelOutputConfig(output: output)
-        tableview
+        
+        tableView
             .rx
             .itemDeleted
             .subscribe(onNext: { [unowned self] (indexPath) in
@@ -50,6 +53,18 @@ class UserVC: UIViewController {
                 self.updateUser.accept(true)
             }).disposed(by: bag)
         
+        tableView
+            .rx
+            .itemSelected
+            .subscribe { [unowned self] (indexPath) in
+                guard let _indexPath = indexPath.element, let cell = self.tableView.cellForRow(at: _indexPath) as? UserTableviewCell else {
+                    return
+                }
+                cell.checkImage.isHidden = !cell.checkImage.isHidden
+            }.disposed(by: bag)
+        
+
+
     }
     
     @objc private func addUser() {
@@ -61,20 +76,30 @@ class UserVC: UIViewController {
     
     func viewModelOutputConfig(output: UserVM.Output) {
         output.users
-            .drive(tableview.rx.items) { [unowned self] (tableview, row, user) in
-                return self.configTableViewCell(tableview: tableview, row: row, user: user)
+            .drive(tableView.rx.items) { [unowned self] (tableView, row, user) in
+                return self.configTableViewCell(tableView: tableView, row: row, user: user)
               }
               .disposed(by: bag)
     }
     
-    func configTableViewCell(tableview: UITableView, row: Int, user: User) -> UITableViewCell {
+    func configTableViewCell(tableView: UITableView, row: Int, user: User) -> UITableViewCell {
         
         let indexPath = IndexPath(row: row, section: 0)
-        let cell = tableview.dequeueReusableCell(withIdentifier: "UserTableviewCell", for: indexPath) as! UserTableviewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableviewCell", for: indexPath) as! UserTableviewCell
         
         cell.titleLabel.text = "姓名: " + user.name
         cell.birthdayLabel.text = "生日: " + user.birthday
-    
+        cell.user = user
+        cell.stepRecordButton
+            .rx
+            .tap
+            .subscribe(onNext: { [weak self] in
+                self?.navigator.push("myapp://steprecord",
+                                     context: user,
+                                     from: nil,
+                                     animated: true)
+            })
+            .disposed(by: cell.bag)
         return cell
     }
     
