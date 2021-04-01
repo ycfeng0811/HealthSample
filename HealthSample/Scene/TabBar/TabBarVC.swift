@@ -19,7 +19,7 @@ struct Items {
 class DefaultItems {
   static var items: [Items] = [
   Items(url: "myapp://user",
-        title: "使用者",
+        title: LanguageManager.languageText.egc,
         tag: 0,
         image: UIImage(named: "user_off"),
         selectedImage: UIImage(named: "user_on")),
